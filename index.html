@@ -8,9 +8,73 @@
 	<head>
 		<title>Directive by HTML5 UP</title>
 		<meta charset="utf-8" />
+		<meta name="referrer" content="origin" />.
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" href="assets/css/images/bear-colored.ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/unitegallery/dist/css/unite-gallery.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/js/unitegallery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/default/ug-theme-default.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/compact/ug-theme-compact.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/slider/ug-theme-slider.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/video/ug-theme-video.js"></script>
+		<link  href='https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/video/skin-right-no-thumb.css' rel='stylesheet' type='text/css' />
+		<link  href='https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css' />
+		<link  href='https://cdn.jsdelivr.net/npm/unitegallery/dist/themes/video/skin-right-title-only.css' rel='stylesheet' type='text/css' />
+		<script>
+			$( function() {
+				$("#accordion").accordion({heightStyle: "content"});
+				$( document ).tooltip();
+				jQuery('#ug-photo-gallery').unitegallery({
+					gallery_theme: 'compact',
+					gallery_width: 900,
+					gallery_height: 450
+				});
+
+
+// Фото-слайдер
+				jQuery('#ug-photo-slider').unitegallery({
+					gallery_theme: 'slider',
+					gallery_width: 900,
+					gallery_height: 450,
+
+				});
+
+
+// Відео-слайдер
+				jQuery("#ug-video-gallery").unitegallery({
+					gallery_theme: "video",
+				});
+
+				jQuery('#ug-video-slider').unitegallery({
+					gallery_theme: "slider",
+					gallery_width: "100%",
+					gallery_height: 500,
+					slider_enable_arrows: true,
+					slider_enable_bullets: true
+				});
+				jQuery("#gallery1").unitegallery({
+					gallery_theme: "tilesgrid",
+					tile_enable_border: false,
+					tile_enable_shadow: true,
+					tile_enable_action: true,
+					tile_action: "open_lightbox", // Клік по плитці відкриває лайтбокс
+
+					lightbox_type: "compact",
+					gallery_width:900,
+					gallery_height:400,
+					tile_link_newpage: false,
+					gallery_enable_text_panel: false,
+				});
+
+
+			});
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -54,30 +118,180 @@
 					-->
 				</header>
 
-				<div class="box alt container">
-					<section class="feature left">
-						<a href="#" class="image"><img src="assets/css/images/bear-photo.png" alt="" /></a>
-						<div class="content">
-							<h3>Ссавці</h3>
-							<p>Ссавці, що занесені до червоної книги україни, особливо ті яки проживають на прифронтових територіях під великою загрозою</p>
-						</div>
-					</section>
-					<section class="feature right">
-						<a href="#" class="image"><img src="assets/css/images/falcon-photo.png" alt="" /></a>
-						<div class="content">
-							<h3>Птахи</h3>
-							<p>Птахи теж є під загрозою через можливе руйнування місць проживання та пошуку їжі.</p>
-						</div>
-					</section>
-					<section class="feature left">
-						<a href="#" class="image"><img src="assets/css/images/crab.png" alt="" /></a>
-						<div class="content">
-							<h3>Морські</h3>
-							<p>Риби та інші морські та річні мешканці теж є під загрозою, особливо після руйнування Каховської ГЕС імені П. С. Непорожнього</p>
-						</div>
-					</section>
-				</div>
 
+
+				<div class="box alt container" >
+					<div id="accordion">
+						<h3>Ссавці</h3>
+						<div>
+							<section class="feature left">
+								<a href="#" class="image" title="Ведмідь бурий"><img src="assets/css/images/bear-photo.png" alt="" /></a>
+								<div class="content">
+									<h4>Ссавці</h4>
+									<p>Ссавці, що занесені до червоної книги україни, особливо ті яки проживають на прифронтових територіях під великою загрозою</p>
+								</div>
+							</section>
+						</div>
+						<h3>Птахи</h3>
+						<div>
+							<section class="feature right">
+								<a href="#" class="image" title="Орел степовий"><img src="assets/css/images/falcon-photo.png" alt="" /></a>
+								<div class="content">
+									<h4>Птахи</h4>
+									<p>Птахи теж є під загрозою через можливе руйнування місць проживання та пошуку їжі.</p>
+								</div>
+							</section>
+						</div>
+						<h3>Морські</h3>
+						<div>
+							<section class="feature left">
+								<a href="#" class="image" title="Прісноводний краб"><img src="assets/css/images/crab.png" alt="" /></a>
+								<div class="content">
+									<h4>Морські</h4>
+									<p>Риби та інші морські та річні мешканці теж є під загрозою, особливо після руйнування Каховської ГЕС імені П. С. Непорожнього</p>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="major container medium">
+					<h3>Фотогалерея — UniteGallery (Lightbox)</h3>
+					<div id="ug-photo-gallery">
+						<img alt="1" src="assets/css/images/bear-photo.png" data-image="assets/css/images/bear-photo.png" />
+						<img alt="2" src="assets/css/images/falcon-photo.png" data-image="assets/css/images/falcon-photo.png" />
+						<img alt="3" src="assets/css/images/crab.png" data-image="assets/css/images/crab.png" />
+					</div>
+					<h3>Слайдер фотографій — UniteGallery Slider</h3>
+					<div id="ug-photo-slider">
+						<img alt="1" src="assets/css/images/bear-photo.png" data-image="assets/css/images/bear-photo.png" />
+						<img alt="2" src="assets/css/images/falcon-photo.png" data-image="assets/css/images/falcon-photo.png" />
+						<img alt="3" src="assets/css/images/crab.png" data-image="assets/css/images/crab.png" />
+					</div>
+					<h3>Слайдер відео — UniteGallery Video</h3>
+					<div id="ug-video-gallery">
+						<div
+								data-type="youtube"
+								data-videoid="824rRdFIslY"
+								data-title="GoPro Demo"
+								data-description="by Go Pro">
+
+						</div>
+
+						<div
+								data-type="youtube"
+								data-videoid="dQw4w9WgXcQ"
+								data-title="GoPro Demo"
+								data-description="by Go Pro">
+						</div>
+
+						<div
+								data-type="youtube"
+								data-videoid="9bZkp7q19f0"
+								data-title="GoPro Demo"
+								data-description="by Go Pro"></div>
+					</div>
+					<h3>Галерея — UniteGallery</h3>
+					<div id="gallery" style="max-width:900px">
+						<!-- Пара прикладів зображень. При розгортанні локально ви можете замінити на свої файли. -->
+						<div id="gallery1">
+							<img alt="Фото 1" src="https://picsum.photos/id/1011/300/200" data-image="https://picsum.photos/id/1011/1200/800">
+							<img alt="Фото 2" src="https://picsum.photos/id/1012/300/200" data-image="https://picsum.photos/id/1012/1200/800">
+							<img alt="Фото 3" src="https://picsum.photos/id/1013/300/200" data-image="https://picsum.photos/id/1013/1200/800">
+						</div>
+					</div>
+					<h3>Інформери</h3>
+					<h4>Годинник</h4>
+						<div style="text-align: center">
+					<!--Dayspedia.com widget--><div class="DPDC" cityid="8424" lang="uk" id="dayspedia_widget_4b028025ef7662d2" host="https://dayspedia.com" ampm="false" nightsign="false" sun="false" style=" text-align: center; background-image: url(&quot;https://cdn.dayspedia.com/img/widgets/bg-10.png&quot;); border-radius: 8px; border-width: 0px; background-color: rgb(48, 147, 21);">
+
+					<style media="screen" id="dayspedia_widget_4b028025ef7662d2_style">
+						/*COMMON*/
+						.DPDC{display:table;position:relative;box-sizing:border-box;font-size:100.01%;font-style:normal;font-family:Arial;background-position:50% 50%;background-repeat:no-repeat;background-size:cover;overflow:hidden;user-select:none}
+						.DPDCh,.DPDCd{width:fit-content;line-height:1.4}
+						.DPDCh{margin-bottom:1em}
+						.DPDCd{margin-top:.24em}
+						.DPDCt{line-height:1}
+						.DPDCth,.DPDCtm,.DPDCts{display:inline-block;vertical-align:text-top;white-space:nowrap}
+						.DPDCth{min-width:0.6em;text-align:right}
+						.DPDCtm,.DPDCts{min-width:1.44em}
+						.DPDCtm::before,.DPDCts::before{display:inline-block;content:':';vertical-align:middle;margin:-.34em 0 0 -.07em;width:.32em;text-align:center;opacity:.72;filter:alpha(opacity=72)}
+						.DPDCt12{display:inline-block;vertical-align:baseline;top:-0.12em;position:relative;font-size:40%}
+						.DPDCdm::after{content:' '}
+						.DPDCda::after{content:', '}
+						.DPDCdt{margin-right:.48em}
+						.DPDCtn{display:inline-block;position:relative;width:13px;height:13px;border:2px solid;border-radius:50%;overflow:hidden}
+						.DPDCtn>i{display:block;content:'';position:absolute;right:33%;top:-5%;width:85%;height:85%;border-radius:50%}
+						.DPDCs{margin:.96em 0 0 -3px;font-size:90%;line-height:1;white-space:nowrap}
+						.DPDCs sup{padding-left:.24em;font-size:65%}
+						.DPDCsl::before,.DPDCsl::after{display:inline-block;opacity:.4}
+						.DPDCsl::before{content:'~';margin:0 .12em}
+						.DPDCsl::after{content:'~';margin:0 .24em}
+						.DPDCs svg{display:inline-block;vertical-align:bottom;width:1.2em;height:1.2em;opacity:.48}
+						/*CUSTOM*/
+
+						.DPDC{width:auto;padding:24px;background-color:#ffffff;border:1px solid #343434;border-radius:8px} /* widget width, padding, background, border, rounded corners */
+						.DPDCh{color:#007DBF;font-weight:normal} /* headline color, font-weight*/
+						.DPDCt,.DPDCd{color:#343434;font-weight:bold} /* time & date color, font-weight */
+						.DPDCtn{border-color:#343434} /* night-sign color = time & date color */
+						.DPDCtn>i{background-color:#343434} /* night-sign color = time & date color */
+						.DPDCt{font-size:48px} /* time font-size */
+						.DPDCh,.DPDCd{font-size:16px} /* headline & date font-size */
+					</style>
+
+					<a class="DPl" href="https://dayspedia.com/time/ua/Uzhhorod/" target="_blank" style="display:block!important;text-decoration:none!important;border:none!important;cursor:pointer!important;background:transparent!important;line-height:0!important;text-shadow:none!important;position:absolute;z-index:1;top:0;right:0;bottom:0;left:0">
+						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" style="position:absolute;right:8px;bottom:0;width:16px;height:16px">
+							<path style="fill: rgb(242, 235, 44);" d="M0,0v16h1.7c-0.1-0.2-0.1-0.3-0.1-0.5c0-0.9,0.8-1.6,1.6-1.6c0.9,0,1.6,0.8,1.6,1.6c0,0.2,0,0.3-0.1,0.5h1.8 c-0.1-0.2-0.1-0.3-0.1-0.5c0-0.9,0.8-1.6,1.6-1.6s1.6,0.8,1.6,1.6c0,0.2,0,0.3-0.1,0.5h1.8c-0.1-0.2-0.1-0.3-0.1-0.5 c0-0.9,0.8-1.6,1.6-1.6c0.9,0,1.6,0.8,1.6,1.6c0,0.2,0,0.3-0.1,0.5H16V0H0z M4.2,8H2V2h2.2c2.1,0,3.3,1.3,3.3,3S6.3,8,4.2,8z M11.4,6.3h-0.8V8H9V2h2.5c1.4,0,2.4,0.8,2.4,2.1C13.9,5.6,12.9,6.3,11.4,6.3z M4.4,3.5H3.7v3h0.7C5.4,6.5,6,6,6,5 C6,4.1,5.4,3.5,4.4,3.5z M11.3,3.4h-0.8V5h0.8c0.6,0,0.9-0.3,0.9-0.8C12.2,3.7,11.9,3.4,11.3,3.4z">
+							</path>
+						</svg>
+						<span title="DaysPedia.com" style="position: absolute; right: 28px; bottom: 6px; height: 10px; width: 60px; overflow: hidden; text-align: right; color: rgb(242, 235, 44); font: 10px / 10px Arial, sans-serif !important;">Powered&nbsp;by DaysPedia.com</span>
+					</a>
+					<div class="DPDCh" style="color: rgb(242, 235, 44);">Поточний Час в місті Ужгород</div>
+					<div class="DPDCt">
+						<span class="DPDCth">17</span><span class="DPDCtm">19</span><span class="DPDCts">19</span><span class="DPDCt12"></span>
+					</div>
+					<div class="DPDCd">
+						<span class="DPDCdt">Пн., 17 Листопада</span><span class="DPDCtn" style="display: none;"><i></i></span>
+					</div>
+
+					<div class="DPDCs" style="display:none">
+		<span class="DPDCsr">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12,4L7.8,8.2l1.4,1.4c0,0,0.9-0.9,1.8-1.8V14h2c0,0,0-3.3,0-6.2l1.8,1.8l1.4-1.4L12,4z"></path><path d="M6.8,15.3L5,13.5l-1.4,1.4l1.8,1.8L6.8,15.3z M4,21H1v2h3V21z M20.5,14.9L19,13.5l-1.8,1.8l1.4,1.4L20.5,14.9z M20,21v2h3 v-2H20z M6.1,23C6,22.7,6,22.3,6,22c0-3.3,2.7-6,6-6s6,2.7,6,6c0,0.3,0,0.7-0.1,1H6.1z"></path></svg>
+			07:42<sup style="display:none">am</sup>
+		</span>
+						<span class="DPDCsl">09:07</span>
+						<span class="DPDCss">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12,14L7.8,9.8l1.4-1.4c0,0,0.9,0.9,1.8,1.8V4h2c0,0,0,3.3,0,6.2l1.8-1.8l1.4,1.4L12,14z"></path><path d="M6.8,15.3L5,13.5l-1.4,1.4l1.8,1.8L6.8,15.3z M4,21H1v2h3V21z M20.5,14.9L19,13.5l-1.8,1.8l1.4,1.4L20.5,14.9z M20,21v2h3 v-2H20z M6.1,23C6,22.7,6,22.3,6,22c0-3.3,2.7-6,6-6s6,2.7,6,6c0,0.3,0,0.7-0.1,1H6.1z"></path></svg>
+			16:49<sup style="display:none">pm</sup>
+		</span>
+					</div>
+					<script>
+						var s, t; s = document.createElement("script"); s.type = "text/javascript";
+						s.src = "//cdn.dayspedia.com/js/dwidget.min.vc84b5f7d.js";
+						t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+						s.onload = function() {
+							window.dwidget = new window.DigitClock();
+							window.dwidget.init("dayspedia_widget_4b028025ef7662d2");
+						};
+					</script>
+					<!--/DPDC-->
+				</div><!--Dayspedia.com widget ENDS-->
+						</div>
+					<h4>Погода — Львів</h4>
+					<!-- Простий погодний віджет (потребує доступу до інтернету) -->
+					<link rel="stylesheet" href="https://sinoptik.ua/resources/informer/css/informer.css">
+					<div class="sin-informer sin-informer_font-Arial sin-informer_theme-light" data-lang="uk"><div class="sin-informer__header"><a class="sin-informer__logo-link" href="https://sinoptik.ua" target="_blank" rel="nofollow"><img class="sin-informer__logo-image" width="66" height="20" srcset="https://sinoptik.ua/resources/informer/assets/icons/logo.png, https://sinoptik.ua/resources/informer/assets/icons/logo2x.png 2x" src="https://sinoptik.ua/resources/informer/assets/icons/logo.png" alt="Sinoptik - logo"></a><p class="sin-informer__date">Погода на найближчий час</p><p class="sin-informer__time" data-format="24"><span class="sin-informer__time-icon"></span></p></div><div class="sin-informer__main sin-informer__main_inline"><a class="sin-informer__entry" href="https://sinoptik.ua/pohoda/lviv" target="_blank" rel="nofollow"><p class="sin-informer__location"> Львів </p><div class="sin-informer__primary" style="display: none"><p class="sin-informer__local-time"></p><p class="sin-informer__temp" data-unit="c"></p><div class="sin-informer__condition" data-icon-path="https://sinoptik.ua/resources/informer/assets/icons/conditions"></div></div><div class="sin-informer__secondary" style="display: none"><p class="sin-informer__marker sin-informer__marker_wind" data-unit="ms" data-suffix="м/с" data-directions="Західний,Північно-Західний,Північний,Північно-Східний,Східний,Південно-Східний,Південний,Південно-Західний,Штиль" title="Вітер"><span class="sin-informer__marker-icon"></span></p><p class="sin-informer__marker sin-informer__marker_humidity" title="Волога"><span class="sin-informer__marker-icon"></span></p><p class="sin-informer__marker sin-informer__marker_pressure" data-unit="mm-hg" data-suffix="мм" title="Тиск"><span class="sin-informer__marker-icon"></span></p></div></a></div><div class="sin-informer__footer"> Погода на 10 днів від <a class="sin-informer__domain-link" href="https://sinoptik.ua/pohoda/lviv/10-dniv" target="_blank" rel="nofollow"> sinoptik.ua </a></div></div>
+					<script src="https://sinoptik.ua/api/informer/content?loc=bwCOPQ6RBMAlPUoebrAObrFr&cem=GkdJ8MEo2koUP6D7cM=0cTYUcnHvPSClPSAlCMAHbnC"></script>
+
+
+					<h4>Курс валют (USD, EUR)</h4>
+
+					<!-- Minfin.com.ua currency informer 275x120 green-->
+						<div style="text-align: center">
+					<div id="minfin-informer-m1Fn-currency" >Завантажуємо <a href="https://minfin.com.ua/ua/currency/" target="_blank">курси валют</a> від minfin.com.ua</a></div><script>var iframe = '<ifra'+'me width="275" height="120" fram'+'eborder="0" src="https://informer.minfin.com.ua/ua/gen/course/?color=green" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:275px;height:120px;ove'+'rflow:hidden;"></iframe>';var cl = 'minfin-informer-m1Fn-currency';document.getElementById(cl).innerHTML = iframe; </script><noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1" alt="minfin.com.ua: курси валют" title="Курс валют" border="0" /></noscript>
+						</div>
+							<!-- Minfin.com.ua currency informer 275x120 green-->
+
+				</div>
+				</div>
 
 				<!--<div class="box container">
 					<header>
@@ -257,11 +471,11 @@
 					</form>
 
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="https://twitter.com" class="icon brands fa-twitter" title="twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com" class="icon brands fa-facebook-f" title="facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://instagram.com" class="icon brands fa-instagram" title="instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com" class="icon brands fa-github" title="github"><span class="label">Github</span></a></li>
+						<li><a href="https://pinterest.com" class="icon brands fa-pinterest" title="pinterest"><span class="label">Pinterest</span></a></li>
 					</ul>
 
 					<ul class="copyright">
@@ -271,8 +485,8 @@
 				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<!-- Scripts
+			<script src="assets/js/jquery.min.js"></script>-->
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
